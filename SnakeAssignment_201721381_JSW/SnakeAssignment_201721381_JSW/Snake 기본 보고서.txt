@@ -1,0 +1,11 @@
+전체 화면 크기 -> 800 * 600
+
+격자 크기 -> 한 칸 = 20 * 20
+GFunc.h에서 const int CELL_SIZE = 20으로 정함.
+
+뱀의 이동속도 -> about 150.4 pixcel/seconds (한 틱당 2만큼의 속력이지만 시간 값이 pixelsize에 맞춰 양자화 되어있음.)
+GFunc.h에서 const int SPEED = 10, main_game.cpp에서 SDL_Delay(1000 / SPEED)를 이용함.
+(고정프레임과 딜레이인 0.133초 지연하고 20만큼 감.)
+
+먹이를 먹을 때 뱀이 늘어나는 길이 -> 20 * 20
+CELL_SIZE만큼 증가함. Snake.cpp 에서 addNode(), Stage.cpp에서 먹이와 충돌할 경우 구현함.
